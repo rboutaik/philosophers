@@ -6,7 +6,7 @@
 /*   By: rboutaik <rboutaik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 00:58:42 by rboutaik          #+#    #+#             */
-/*   Updated: 2024/06/06 23:01:31 by rboutaik         ###   ########.fr       */
+/*   Updated: 2024/06/06 23:05:28 by rboutaik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ typedef struct s_data
 	int 			eat_nbr;
 	size_t			start_time;
 	int				is_dead;
+	int				total_meals;
 	pthread_mutex_t	print;
+	pthread_mutex_t	total_meals_lock;
 	pthread_mutex_t	dead_lock;
 	pthread_mutex_t	start_eating_lock;
 	pthread_mutex_t	meals_lock;

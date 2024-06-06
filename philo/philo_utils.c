@@ -6,7 +6,7 @@
 /*   By: rboutaik <rboutaik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:08:22 by rboutaik          #+#    #+#             */
-/*   Updated: 2024/06/06 22:34:40 by rboutaik         ###   ########.fr       */
+/*   Updated: 2024/06/06 23:25:04 by rboutaik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	args_checker(int ac, char **av, t_data *data)
 		return (args_failure(2));
 	if (ac == 6 && data->eat_nbr < 0)
 		return (args_failure(2));
+	if (data->philos_nbr == 0)
+		return (1);
 	return (0);
 }
 

@@ -6,13 +6,13 @@
 #    By: rboutaik <rboutaik@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/05 00:58:35 by rboutaik          #+#    #+#              #
-#    Updated: 2024/06/06 22:36:19 by rboutaik         ###   ########.fr        #
+#    Updated: 2024/06/06 23:22:47 by rboutaik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror  #-fsanitize=thread -g
+FLAGS = -Wall -Wextra -Werror  -fsanitize=thread -g
 
 NAME = philo
 
