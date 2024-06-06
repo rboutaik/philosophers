@@ -6,7 +6,7 @@
 /*   By: rboutaik <rboutaik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:08:22 by rboutaik          #+#    #+#             */
-/*   Updated: 2024/06/06 16:56:02 by rboutaik         ###   ########.fr       */
+/*   Updated: 2024/06/06 22:34:40 by rboutaik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ int	malloc_failure(int n, t_philo *philos, pthread_mutex_t *forks)
 void	custom_print(t_philo *philo, char *str)
 {
 	pthread_mutex_lock(&philo->data->print);
+	if (_died(philo))
+	{
+		pthread_mutex_unlock(&philo->data->print);
+		return ;
+	}
 	printf("%lu %d %s", get_current_time() - philo->data->start_time, philo->id + 1, str);
 	pthread_mutex_unlock(&philo->data->print);
 }
