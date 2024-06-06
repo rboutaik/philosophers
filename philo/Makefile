@@ -6,17 +6,17 @@
 #    By: rboutaik <rboutaik@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/05 00:58:35 by rboutaik          #+#    #+#              #
-#    Updated: 2024/06/06 23:22:47 by rboutaik         ###   ########.fr        #
+#    Updated: 2024/06/07 00:22:35 by rboutaik         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror  -fsanitize=thread -g
+FLAGS = -Wall -Wextra -Werror  #-fsanitize=thread -g
 
 NAME = philo
 
-CFILES = philo.c philo_utils.c
+CFILES = philo.c philo_utils.c philo_routine.c philo_utils_2.c philo_utils_3.c
 
 OFILES = $(CFILES:.c=.o)
 

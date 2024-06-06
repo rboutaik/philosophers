@@ -6,7 +6,7 @@
 /*   By: rboutaik <rboutaik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:08:22 by rboutaik          #+#    #+#             */
-/*   Updated: 2024/06/06 23:25:04 by rboutaik         ###   ########.fr       */
+/*   Updated: 2024/06/06 23:37:31 by rboutaik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *str)
 	return (nb * signe);
 }
 
-int    args_failure(int	flag)
+int	args_failure(int flag)
 {
 	if (flag == 1)
 		printf("Wrong number of args :(\n");
@@ -70,9 +70,8 @@ int	args_checker(int ac, char **av, t_data *data)
 	return (0);
 }
 
-int	malloc_failure(int n, t_philo *philos, pthread_mutex_t *forks)
+int	ft_free(t_philo *philos, pthread_mutex_t *forks)
 {
-	(void)n;
 	free(philos);
 	philos = NULL;
 	free(forks);
@@ -88,6 +87,7 @@ void	custom_print(t_philo *philo, char *str)
 		pthread_mutex_unlock(&philo->data->print);
 		return ;
 	}
-	printf("%lu %d %s", get_current_time() - philo->data->start_time, philo->id + 1, str);
+	printf("%lu %d %s",
+		get_current_time() - philo->data->start_time, philo->id + 1, str);
 	pthread_mutex_unlock(&philo->data->print);
 }
